@@ -1,0 +1,67 @@
+############################################
+#Driving Simulation Assignment##############
+############################################
+#IMPORTANT VARIABLES:
+#Initial Velocity = Constant 0 m/s
+#Time spent on the road = user input (s)
+#Acceleration = user input (m/s2)
+#Distance = user input (m)
+#Speed Limit = Constant 60 m/s
+#________________________________
+#v= final velocity
+#s= distance
+#u= Initial velocity
+#a= acceleration
+#t= time(second)
+#________________________________
+#Formatting 1 * = 10m
+
+#Important Note
+#Max Speed Limit: 60
+
+#sesuai biasa variable in list dlu
+distance=[]
+time=[]
+acceleration=[]
+dis= 0
+#Start up menu, greeting bla bla basa basi
+def start_menu():
+    print("Welcome to Driving Simulation V 0.1")
+    des_num()
+    return
+
+#Input nomor buat diambil jadi variable abis itu lansung kasi liat hasilnya
+def des_num():
+    s=int(input("Please input your distance (in meter)"))
+    distance.append(s)
+    x=float(s)
+    t=int(input("Please input your time spent (in seconds)"))
+    time.append(t)
+    a=int(input("Please input your acceleration "))
+    acceleration.append(a)
+    males()
+    return distance ,time ,acceleration ,v ,s ,dis ,x
+
+def males():
+    time2 = int(time[-1])
+    for pusing in range(1,time2+1):
+        t=float(acceleration[-1])
+        b=int(t)
+        kehabisan_huruf= (b/2)*(pusing**2)
+        w= int(kehabisan_huruf)
+        m=str(pusing)
+        print("Duration: "+ m +" Distance: " + ("*"*int(kehabisan_huruf/10)))
+    masih_gkngerti()
+    return k, n, time2,t, pusing2, kehabisan_huruf,b,w
+
+def masih_gkngerti():
+    k=float(acceleration[-1])*float(time[-1])
+    b=str(k)
+    if k > 60:
+        print("The speed is over limit. (MAX 60 M/S). your speed:" + b)
+    else:
+        print("The person did not go over the speed limit.(MAX 60 M/S). your speed:" + b)
+    print("RESTARTING SIMULATOR")
+    start_menu()
+    return acceleration, k
+start_menu()
